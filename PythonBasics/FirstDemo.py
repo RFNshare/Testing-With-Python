@@ -16,3 +16,5 @@ print("{} {}".format("Value is", b))
 print(type(b))
 print(type(c))
 print(type(d))
+
+# Numeric(int, long, float, complex), String, List, Tuple, Dictionary
