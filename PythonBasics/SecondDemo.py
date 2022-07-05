@@ -33,3 +33,9 @@ print("Tuple", val[1])
 # Create a Dic
 dic = {1: "age", "b": 2, "age": 27.5}
 print(dic[1])
+
+dict = {}
+dict["FirstName"] = "Abdullah Al"
+dict["LastName"] = "Faroque"
+print(dict)
+print(dict["LastName"])
