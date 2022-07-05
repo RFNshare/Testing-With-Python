@@ -16,7 +16,12 @@ for i in range(6):
     a += i
 print(a)
 print("***************")
-for j in range(1,100,4):
+for j in range(1, 10, 4):
     print(j)
 
 print("***************")
+it = 4
+for k in obj:
+    if k == 4:
+        continue
+    print(k)
