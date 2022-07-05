@@ -8,3 +8,11 @@ print(Str)
 
 b, c, d = 5, 5.6, "Great"
 
+# print("Value is " + b)
+# Different Data Type Printing Together
+print("{} {}".format("Value is", b))
+
+# Printing Data Type
+print(type(b))
+print(type(c))
+print(type(d))
