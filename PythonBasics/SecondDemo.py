@@ -25,3 +25,11 @@ print(values)
 # Delete Index
 del values[-1]
 print(values)
+
+# Create a tuple(Immutable)
+val = (1, 2, "raju", 4.5)
+print("Tuple", val[1])
+
+# Create a Dic
+dic = {1: "age", "b": 2, "age": 27.5}
+print(dic[1])
