@@ -6,7 +6,7 @@ class Calculator:
         self.num1 = a
         self.num2 = b
         a = 0  # Instance variable
-        print("Constructor")
+        print("Parent Constructor Calling...")
 
     def getData(self):
         print("Random Data From Class")
@@ -17,10 +17,11 @@ class Calculator:
 
 # Class Variable are constant
 
-obj = Calculator(2, 3)
-result = obj.addition()
-print(result)
+if __name__ == '__main__':
+    obj = Calculator(2, 3)
+    result = obj.addition()
+    print(result)
 
-obj1 = Calculator(4, 5)
-result = obj1.addition()
-print(result)
+    obj1 = Calculator(4, 5)
+    result = obj1.addition()
+    print(result)
