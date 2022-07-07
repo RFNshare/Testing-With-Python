@@ -1,2 +1,1 @@
-This is a sample text
-This is another line
+First, let's read a text file. Let's say we're working with a file named lorem.txt, which contains lines from the Lorem Ipsum example text. 
