@@ -1,19 +1,25 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
-service_obj = Service("../resources/chromedriver.exe")
+# service_obj = Service("../resources/chromedriver.exe")
 
 # Add some extra option for Chrome
 options = Options()
 options.add_argument("start-maximized")
 
 # Auto Download Driver & Saved into Cache
-# service_obj = Service(ChromeDriverManager().install())
+chrome_service_obj = ChromeService(ChromeDriverManager().install())
+firefox_service_obj = FirefoxService(GeckoDriverManager().install())
+edge_service_obj = EdgeService(EdgeChromiumDriverManager().install())
 
-# Initialize Chrome Driver & Ready to go
-driver = webdriver.Chrome(service=service_obj, options=options)
+# Initialize Driver & Ready to go
+driver = webdriver.Edge(service=edge_service_obj)
 
 # Open browser & go to URL
 URL = "https://rahulshettyacademy.com/"
