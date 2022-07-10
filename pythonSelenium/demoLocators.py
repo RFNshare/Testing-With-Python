@@ -20,10 +20,14 @@ driver.find_element(By.ID, "exampleCheck1").click()
 # css: tagname[attribute='value'] / #id, .classname
 driver.find_element(By.CSS_SELECTOR, "#inlineRadio1").click()
 # driver.find_element(By.CSS_SELECTOR, 'input[type="text"]')
-driver.find_element(By.XPATH,'(//input[@type="text"])[3]').clear()
-driver.find_element(By.XPATH,'(//input[@type="text"])[3]').send_keys("Nothing Phone 1")
+driver.find_element(By.XPATH, '(//input[@type="text"])[3]').clear()
+driver.find_element(By.XPATH, '(//input[@type="text"])[3]').send_keys("Nothing Phone 1")
 driver.find_element(By.XPATH, "//input[@type='submit']").click()
 success = driver.find_element(By.CLASS_NAME, "alert-success").text
 assert "Success" in success
-time.sleep(5)
+a = driver.find_elements(By.XPATH, '//input[@type="text"]')
+print(a[2].get_attribute("value"))
+for i in a:
+    print(i.is_displayed())
+print(driver.find_element(By.CLASS_NAME, "alert-success").value_of_css_property("padding-right"))
 driver.close()
