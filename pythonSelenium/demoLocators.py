@@ -20,6 +20,7 @@ driver.find_element(By.ID, "exampleCheck1").click()
 # css: tagname[attribute='value'] / #id, .classname
 driver.find_element(By.CSS_SELECTOR, "#inlineRadio1").click()
 # driver.find_element(By.CSS_SELECTOR, 'input[type="text"]')
+driver.find_element(By.XPATH,'(//input[@type="text"])[3]').clear()
 driver.find_element(By.XPATH,'(//input[@type="text"])[3]').send_keys("Nothing Phone 1")
 driver.find_element(By.XPATH, "//input[@type='submit']").click()
 success = driver.find_element(By.CLASS_NAME, "alert-success").text
