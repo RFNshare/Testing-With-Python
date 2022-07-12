@@ -30,3 +30,4 @@ time.sleep(0.1)
 driver.find_element(By.CSS_SELECTOR, "input[class~='btn-style']:nth-child(3)").click()
 assert driver.find_element(By.CSS_SELECTOR,
                            "div[class^='right']:nth-child(2) fieldset:nth-child(1) [placeholder*='ide']").is_displayed()
+
