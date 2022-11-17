@@ -1,42 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e12df7e-ccad-43f5-9aae-04aece4b65b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/v2/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PythonTesting.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/ClassDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/ExceptionsDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/FirstDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/FunctionDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/InheritenceDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/ReadDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/SecondDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/StringsDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/ThirdDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonBasics/WriteDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonSelenium/demoAlertHandles.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonSelenium/demoAutomationPractice.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonSelenium/demoBrowser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonSelenium/demoExtraLocators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonSelenium/demoFindElementsTest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonSelenium/demoLocatorExtension.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonSelenium/demoLocators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonSelenium/demoWaitElement.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/geckodriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/msedgedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sample.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="3e12df7e-ccad-43f5-9aae-04aece4b65b8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +32,12 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "terminal"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -76,6 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667137608369</updated>
       <workItem from="1667137610361" duration="103000" />
+      <workItem from="1668687908411" duration="334000" />
     </task>
     <servers />
   </component>
