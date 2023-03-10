@@ -22,7 +22,12 @@ def run(browser, auto):
             # Manually Select driver from repository
             service_obj = ChromeService("../resources/chromedriver.exe")
         # Initialize Driver & Ready to go
-        driver = webdriver.Chrome(service=service_obj, options=options)
+        try:
+            driver = webdriver.Chrome(service=service_obj, options=options)
+        except Exception as e:
+            print("Driver Not Valid")
+        finally:
+            print("Cleaning Done")
     elif browser in ("Firefox", "firefox", "f"):
         # Add some extra option for Firefox
         # options = Options()
@@ -48,23 +53,28 @@ def run(browser, auto):
         # Initialize Driver & Ready to go
         driver = webdriver.Edge(service=service_obj)
     # Open browser & go to URL
-    URL = "https://rahulshettyacademy.com/"
-    driver.get(URL)
-    # assert webpage title
-    assert driver.title in "Rahul Shetty Academy"
-    # Checking Current URL
-    assert driver.current_url in URL
-    driver.get("https://www.rahulshettyacademy.com/AutomationPractice/")
-    # Minimize the window
-    driver.minimize_window()
-    # Back, Refresh & Forward the browser
-    driver.back()
-    driver.refresh()
-    driver.maximize_window()
-    driver.forward()
-    # Close the driver
-    driver.close()
+    try:
+        URL = "https://rahulshettyacademy.com/"
+        driver.get(URL)
+        # assert webpage title
+        assert driver.title in "Rahul Shetty Academy"
+        # Checking Current URL
+        assert driver.current_url in URL
+        driver.get("https://www.rahulshettyacademy.com/AutomationPractice/")
+        # Minimize the window
+        driver.minimize_window()
+        # Back, Refresh & Forward the browser
+        driver.back()
+        driver.refresh()
+        driver.maximize_window()
+        driver.forward()
+        # Close the driver
+        driver.close()
+    except Exception as e:
+        print(e, "Driver Not Valid")
+    finally:
+        print("Cleaning Done")
 
 
 if __name__ == '__main__':
-    run('e', 'yes')
+    run('c', 'n')
