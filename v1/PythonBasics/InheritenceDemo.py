@@ -1,5 +1,5 @@
-from PythonBasics import ClassDemo
-from PythonBasics.ClassDemo import Calculator
+from v1.PythonBasics.ClassDemo import Calculator
+
 
 # qwe = ClassDemo.Calculator(1, 3)
 # res = qwe.addition()

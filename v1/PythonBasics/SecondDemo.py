@@ -39,3 +39,5 @@ dict["FirstName"] = "Abdullah Al"
 dict["LastName"] = "Faroque"
 print(dict)
 print(dict["LastName"])
+for key in dict:
+    print("...", key, dict[key])

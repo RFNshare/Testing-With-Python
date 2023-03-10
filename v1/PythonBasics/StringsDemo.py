@@ -10,6 +10,7 @@ print(str[8:16])
 # concatenation
 print("{} {}".format(str, str1))
 print(str1 + str)
+print(f"This is {str1} & {str2}")
 
 # String Split
 var = str2.split(" ")
