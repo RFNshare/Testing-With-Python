@@ -1,3 +1,4 @@
+import collections
 values = [1, 2, "raju", 4.5, 7]
 
 # List is a data type that allow multiple values and can be different data types.
@@ -41,3 +42,16 @@ print(dict)
 print(dict["LastName"])
 for key in dict:
     print("...", key, dict[key])
+
+a = "aabbcccdeerrtqqafgrr"
+dic = {}
+for i in a:
+    if i in dic:
+        dic[i] += 1
+    else:
+        dic[i] = 1
+
+print(dic)
+
+res = collections.Counter(a)
+print(res)
