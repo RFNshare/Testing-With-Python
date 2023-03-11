@@ -33,5 +33,6 @@ assert radios[0].is_selected()
 assert driver.find_element(By.CSS_SELECTOR, "#displayed-text").is_displayed()
 driver.find_element(By.CSS_SELECTOR, "#hide-textbox").click()
 assert not driver.find_element(By.CSS_SELECTOR, "#displayed-text").is_displayed()
+
 time.sleep(2)
 
