@@ -25,4 +25,8 @@ for radio in radios:
         radio.click()
         assert radio.is_selected()
         break
+
+# Select By Index
+radios[0].click()
+assert radios[0].is_selected()
 time.sleep(2)
