@@ -15,5 +15,6 @@ checkboxes = driver.find_elements(By.CSS_SELECTOR, "input[type='checkbox']")
 for checkbox in checkboxes:
     if checkbox.get_attribute("value") == "option2":
         checkbox.click()
+        assert checkbox.is_selected()
         break
 time.sleep(2)
