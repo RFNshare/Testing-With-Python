@@ -29,8 +29,11 @@ driver.find_element(By.CSS_SELECTOR, "#startPoint").send_keys("Oslo, Norway")
 time.sleep(2)
 lst = driver.find_elements(By.CSS_SELECTOR, "span[class='pac-matched']")
 for i in lst:
-    print(i.text)
     if i.text == "Oslo, Norway":
         i.click()
         break
+time.sleep(2)
+loc = driver.find_element(By.CSS_SELECTOR, "#startPoint").get_attribute("value")
+print(loc)
+assert "Oslo" in loc
 time.sleep(5)
