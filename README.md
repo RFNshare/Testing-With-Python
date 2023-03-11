@@ -29,9 +29,9 @@ Behold my periodic learnings, and judge me for my ignorance.
 * Handle Dynamic Checkbox(By Loop, By Index) & Validate
 * Assert is_selected, is_displayed
 * Handling Alerts(Switch Alert Mode, Accept.Dismiss,Grab Text)
-* Functional Testing with (Explicit & Implicit Wait)
+* Explicit & Implicit Wait(Using WebDriverWait For Explicit Wait)
 * Chaining Web Element
-* Using WebDriverWait For Explicit Wait
+* Functional Testing with GREENKART Site(Add To Cart, Validate Sum & Discount, Matching Prod Names List)
 
 
 ### Miscellaneous
