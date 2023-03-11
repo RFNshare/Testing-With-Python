@@ -13,10 +13,17 @@ Behold my periodic learnings, and judge me for my ignorance.
 ### Python Basic
 
 * Basics of python language.
+* Datatypes & Variables
+* Flow Control & OOP
+* Read & Write
+* Exception Handling Mechanism
 
 ### Web Automation
 
 * Usage of Python selenium library
+* Execute Script Into Different Browser (Chrome, Firefox, Edge)
+* Explore Selenium Locators (XPATH, CSS, ID, Name, ClassName, LinkText/Partial LinkText)
+* Drop Using Select Class For Select Tag(By Index, By Visible Text, By Value)
 
 ### Miscellaneous
 
