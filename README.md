@@ -23,7 +23,13 @@ Behold my periodic learnings, and judge me for my ignorance.
 * Usage of Python selenium library
 * Execute Script Into Different Browser (Chrome, Firefox, Edge)
 * Explore Selenium Locators (XPATH, CSS, ID, Name, ClassName, LinkText/Partial LinkText)
-* Drop Using Select Class For Select Tag(By Index, By Visible Text, By Value)
+* Static Drop Using Select Class For Select Tag(By Index, By Visible Text, By Value)
+* Handle Dynamic Dropdown Using Loop & Elements
+* Fetch Text & Attribute Value For Assertion
+* Handle Dynamic Checkbox(By Loop, By Index) & Validate
+* Assert is_selected, is_displayed
+* Handling Alerts(Switch Alert Mode, Accept.Dismiss,Grab Text)
+
 
 ### Miscellaneous
 
