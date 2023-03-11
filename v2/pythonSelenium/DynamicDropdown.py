@@ -16,8 +16,10 @@ time.sleep(2)
 countries = driver.find_elements(By.CSS_SELECTOR, ".ui-menu-item a[id*='ui-id']")
 print(len(countries))
 for country in countries:
-    print(country.text)
     if country.text == "India":
         country.click()
         break
 time.sleep(2)
+picked_name = driver.find_element(By.CSS_SELECTOR, "#autosuggest").get_attribute("value")
+print(picked_name)
+assert "India" in picked_name
