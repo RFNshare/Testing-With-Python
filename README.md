@@ -32,6 +32,8 @@ Behold my periodic learnings, and judge me for my ignorance.
 * Explicit & Implicit Wait(Using WebDriverWait For Explicit Wait)
 * Chaining Web Element
 * Functional Testing with GREENKART Site(Add To Cart, Validate Sum & Discount, Matching Prod Names List)
+* Actions (Click & Hold, Contex CLick, Double Click, Long-press, Drag & Drop, Hover) Using ActionChains
+* Handling Windows(Switch/Back Window Mode To Child/Parent By Index)
 
 
 ### Miscellaneous
