@@ -34,7 +34,7 @@ Behold my periodic learnings, and judge me for my ignorance.
 * Functional Testing with GREENKART Site(Add To Cart, Validate Sum & Discount, Matching Prod Names List)
 * Actions (Click & Hold, Contex CLick, Double Click, Long-press, Drag & Drop, Hover) Using ActionChains
 * Handling Windows(Switch/Back Window Mode To Child/Parent By Index)
-
+* Functional Testing with loginpagePractise Site(Window Handle, Email Extract, Explicit Wait & Assert)
 
 ### Miscellaneous
 
