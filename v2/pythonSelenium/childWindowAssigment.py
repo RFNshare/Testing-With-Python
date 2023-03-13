@@ -9,6 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
+driver.implicitly_wait(4)
 URL = "https://rahulshettyacademy.com/loginpagePractise/"
 driver.get(URL)
 driver.find_element(By.PARTIAL_LINK_TEXT, "Free Access").click()
