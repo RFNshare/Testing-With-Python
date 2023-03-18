@@ -36,6 +36,7 @@ Behold my periodic learnings, and judge me for my ignorance.
 * Handling Windows(Switch/Back Window Mode To Child/Parent By Index)
 * Functional Testing with loginpagePractise Site(Parent/ChildWindow Handle, Email Extract, Explicit Wait & Assert)
 * iFrame Handle, switch to frame. Go to default mode
+* Execute JavaScript, Added Chrome Argument(headless, handle ssl certificate etc)
 
 ### Miscellaneous
 
