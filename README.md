@@ -64,7 +64,7 @@ Behold my periodic learnings, and judge me for my ignorance.
     * Scope: can be sharing fixtures across classes, modules, packages or session
     * use `@pytest.fixture(scope="class")` for Onetime Setup & Teardown into TestClass where group of testcases contains.
     * Data driven fixtures to load data into tests. Use fixture data into testcases(drivers, data's)
-      * return fixture data with yield[explore about yield details](Pending)
+      * return fixture data with yield [explore about yield details] (Pending)
 * Understand Logging and HTML Reports
 * Implement Selenium Python Framework (PageObject DesignPattern)
 * Integrating Framework to Jenkins and setup job parameters
