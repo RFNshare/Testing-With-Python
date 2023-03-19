@@ -44,11 +44,27 @@ Behold my periodic learnings, and judge me for my ignorance.
 ## Selenium Python Framework Design Plan
 
 * Pytest Unit Testing Framework
-  * pytest file should start with test_ or end with _test
-  * pytest method names should start with test & any code wrapped in method only. Every method behave like one test case.
-  * run ``py.test -v -s`` to run all test cases in a directory. v=verbose,s=console log
-  * run ``py.test -v -s test_file_name.py`` to run specific file.
-  * run ``py.test -v -s -k method_partial_name`` to run module based on module name regex match.
+  * Basic Pytest
+    * pytest file should start with test_ or end with _test
+    * pytest method names should start with test & any code wrapped in method only. Every method behave like one test case.
+    * run ``py.test -v -s`` to run all test cases in a directory. v=verbose,s=console log
+    * run ``py.test -v -s test_file_name.py`` to run specific file.
+    * run ``py.test -v -s -k method_partial_name`` to run module based on module name regex match.
+    * run ``py.test -v -s -m smoke`` to run module based on pytest mark(tag) in pytest.ini file.
+    * combine run `py.test -v -s -k card -m smoke` based on module partial name with mark(tag).
+    * silent run `pytest -q`
+    * use `@pytest.mark.skip` to skip a test case module.
+    * use `@pytest.mark.xfail` to skip report but method will be executed.
+  * Pytest Fixtures 
+    * use `@pytest.fixture()` mark to set up pre-requisite method `setup` to run before execute the test cases.
+    * use `yield` in setup method to teardown/cleanup after execute all test cases.
+    * use method name (setup) into test method parameter will execute fixture.
+    * use `conftest` to generalize fixture for every pytest test file in a directory.
+    * use `@pytest.mark.usefixtures("setup")` into TestClass for use fixture to all test methods in a class.
+    * Scope: can be sharing fixtures across classes, modules, packages or session
+    * use `@pytest.fixture(scope="class")` for Onetime Setup & Teardown into TestClass where group of testcases contains.
+    * Data driven fixtures to load data into tests. Use fixture data into testcases(drivers, data's)
+      * return fixture data with yield[explore about yield details](Pending)
 * Understand Logging and HTML Reports
 * Implement Selenium Python Framework (PageObject DesignPattern)
 * Integrating Framework to Jenkins and setup job parameters
