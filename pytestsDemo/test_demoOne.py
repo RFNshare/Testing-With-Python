@@ -1,6 +1,6 @@
-def test_firstProgram():
+def test_first_program():
     print("Hello")
 
 
-def test_SecondProgram():
+def test_second_program_credit_card():
     print("Hello Two")
