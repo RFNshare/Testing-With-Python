@@ -2,4 +2,3 @@
 .idea/*.iml
 drivers
 v2/pythonSelenium/geckodriver.log
-v2/ss

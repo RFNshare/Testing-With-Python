@@ -7,6 +7,3 @@ with open(path, 'r') as reader:
         for i in rev:
             print(i)
             writer.write(i + " ")
-
-
-

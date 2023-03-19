@@ -6,7 +6,6 @@ file = open('../resources/sample.txt')
 # # Read 1 line
 print(file.readline())
 
-
 # Print line by line
 
 line = file.readline()

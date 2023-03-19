@@ -1,4 +1,5 @@
 import collections
+
 values = [1, 2, "raju", 4.5, 7]
 
 # List is a data type that allow multiple values and can be different data types.

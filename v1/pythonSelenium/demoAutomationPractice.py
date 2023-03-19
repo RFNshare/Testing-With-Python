@@ -2,9 +2,8 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.edge.service import Service as EdgeService
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 service_obj = EdgeService(EdgeChromiumDriverManager().install())
 driver = webdriver.Edge(service=service_obj)
@@ -30,4 +29,3 @@ time.sleep(0.1)
 driver.find_element(By.CSS_SELECTOR, "input[class~='btn-style']:nth-child(3)").click()
 assert driver.find_element(By.CSS_SELECTOR,
                            "div[class^='right']:nth-child(2) fieldset:nth-child(1) [placeholder*='ide']").is_displayed()
-

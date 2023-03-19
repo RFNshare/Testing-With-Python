@@ -2,9 +2,9 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.support.select import Select
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from selenium.webdriver.edge.service import Service as EdgeService
 
 service_obj = EdgeService(EdgeChromiumDriverManager().install())
 driver = webdriver.Edge(service=service_obj)
@@ -25,7 +25,6 @@ driver.find_element(By.CSS_SELECTOR, "#inlineRadio1").click()
 gender = Select(driver.find_element(By.ID, "exampleFormControlSelect1"))
 gender.select_by_visible_text("Female")
 gender.select_by_index(0)
-
 
 # driver.find_element(By.CSS_SELECTOR, 'input[type="text"]')
 driver.find_element(By.XPATH, '(//input[@type="text"])[3]').clear()
