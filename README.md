@@ -47,7 +47,8 @@ Behold my periodic learnings, and judge me for my ignorance.
   * pytest file should start with test_ or end with _test
   * pytest method names should start with test & any code wrapped in method only. Every method behave like one test case.
   * run ``py.test -v -s`` to run all test cases in a directory. v=verbose,s=console log
-  * 
+  * run ``py.test -v -s test_file_name.py`` to run specific file.
+  * run ``py.test -v -s -k method_partial_name`` to run module based on module name regex match.
 * Understand Logging and HTML Reports
 * Implement Selenium Python Framework (PageObject DesignPattern)
 * Integrating Framework to Jenkins and setup job parameters
