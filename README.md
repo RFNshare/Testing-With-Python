@@ -38,6 +38,7 @@ Behold my periodic learnings, and judge me for my ignorance.
 * iFrame Handle, switch to frame. Go to default mode
 * Execute JavaScript, Added Chrome Argument(headless, handle ssl certificate etc)
 * Table Sorting & Validation, Chrome Options Details Explore
+* E2E Functional Testing (AngularPractice Shop)[All Topics Included]
 
 ### Miscellaneous
 
