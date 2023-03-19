@@ -1,3 +1,7 @@
+import pytest
+
+
+@pytest.mark.smoke
 def test_third_program():
     msg = "Hello"
     assert msg == "Hi", "Test Failed Because strings do not match"
