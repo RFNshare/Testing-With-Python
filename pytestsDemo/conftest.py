@@ -1,4 +1,9 @@
+import time
+
 import pytest
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 # Scope on class level
@@ -9,6 +14,12 @@ def setup_data():
     print("Cleanup Test Cases Data ...")
 
 
+@pytest.fixture
+def data_load():
+    print("Data...")
+    return ["https://the-internet.herokuapp.com/tinymce", "Abdullah Al Faroque"]
+
+
 # Scope on module level
 @pytest.fixture()
 def setup_browser():
@@ -16,11 +27,18 @@ def setup_browser():
     yield
     print("Teardown Browser ...")
 
-# @pytest.fixture
-# def driver():
-#     _driver = Chrome()
-#     yield _driver
-#     _driver.quit()
+
+@pytest.fixture
+def driver():
+    print("Open Browser Original...")
+    service = Service(ChromeDriverManager().install())
+    _driver = webdriver.Chrome(service=service)
+    _driver.implicitly_wait(5)
+    yield _driver
+    time.sleep(1)
+    _driver.quit()
+    print("Teardown Browser Original...")
+    return _driver
 #
 #
 # @pytest.fixture
