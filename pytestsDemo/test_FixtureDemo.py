@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("setup_data", "setup_browser")
 class TestExample:
     def test_fix_demo_one(self):
         print("Test in fixtureDemo")
