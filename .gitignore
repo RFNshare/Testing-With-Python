@@ -3,3 +3,5 @@
 drivers
 v2/pythonSelenium/geckodriver.log
 __pycache__/
+*.html
+assets
