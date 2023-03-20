@@ -65,6 +65,8 @@ Behold my periodic learnings, and judge me for my ignorance.
     * use `@pytest.fixture(scope="class")` for Onetime Setup & Teardown into TestClass where group of testcases contains.
     * Data driven fixtures to load data into tests. Use fixture data into testcases(drivers, data's)
     * return fixture data with yield like this `yield your_data`
+    * cross browser testing using `@pytest.fixture(params=["chrome", "firefox", "edge"])`
+    * send fixture multiple data one single run like this `@pytest.fixture(params=[("chrome", "raju", "pass"), "firefox", "edge"])`
 * Understand Logging and HTML Reports
 * Implement Selenium Python Framework (PageObject DesignPattern)
 * Integrating Framework to Jenkins and setup job parameters
