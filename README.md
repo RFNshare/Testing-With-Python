@@ -9,7 +9,7 @@ Behold my periodic learnings, and judge me for my ignorance.
 
 ## Tech and Team
 
-"Worky" things. Mostly (or entirely) technical related to API Automation with python learnings.
+"Worky" things. Mostly (or entirely) technical related to Web Automation with python selenium learnings.
 
 ### Python Basic
 
