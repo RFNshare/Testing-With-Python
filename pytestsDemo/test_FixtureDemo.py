@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 # data load specific method level
 @pytest.mark.usefixtures("setup_data", "setup_browser")
 class TestExample:
+    @pytest.mark.smoke
     def test_fix_demo_one(self, driver, setup_data):
         print("Test in heroku app demo")
         driver.get(setup_data[0])
