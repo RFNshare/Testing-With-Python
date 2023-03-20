@@ -7,13 +7,13 @@ from selenium.webdriver.common.by import By
 # data load specific method level
 @pytest.mark.usefixtures("setup_data", "setup_browser")
 class TestExample:
-    def test_fix_demo_one(self, driver, data_load):
+    def test_fix_demo_one(self, driver, setup_data):
         print("Test in heroku app demo")
-        driver.get(data_load[0])
+        driver.get(setup_data[0])
         driver.switch_to.frame("mce_0_ifr")
         driver.find_element(By.ID, "tinymce").clear()
-        print("Load Data From DataLoad Fixture:", data_load)
-        driver.find_element(By.ID, "tinymce").send_keys(data_load[1])
+        print("Load Data From DataLoad Fixture:", setup_data)
+        driver.find_element(By.ID, "tinymce").send_keys(setup_data[1])
 
     def test_fix_demo_two(self):
         print("Test in fixtureDemo")

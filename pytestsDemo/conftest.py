@@ -10,14 +10,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 @pytest.fixture(scope="class")
 def setup_data():
     print("Initialize Variables For Set...")
-    yield
+    lst = ["https://the-internet.herokuapp.com/tinymce", "Abdullah Al Faroque"]
+    yield lst
     print("Cleanup Test Cases Data ...")
-
-
-@pytest.fixture
-def data_load():
-    print("Data...")
-    return ["https://the-internet.herokuapp.com/tinymce", "Abdullah Al Faroque"]
 
 
 # Scope on module level
@@ -38,9 +33,7 @@ def driver():
     time.sleep(1)
     _driver.quit()
     print("Teardown Browser Original...")
-    return _driver
-#
-#
+
 # @pytest.fixture
 # def login(driver, base_url, user):
 #     driver.get(urljoin(base_url, "/login"))
