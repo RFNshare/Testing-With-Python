@@ -1,18 +1,32 @@
-import logging
+import logging.config
+
 
 def test_logging():
-    file = logging.FileHandler("logfile.log")  # File for log
-    formatter = logging.Formatter("%(asctime)s :%(levelname)s :%(name)s :%(message)s")  # Format of log
-    file.setFormatter(formatter)  # set formatter into file
-
-    logger = logging.getLogger(__name__)  # obj of log
-    logger.addHandler(file)  # adding log into file
-    logger.setLevel(logging.DEBUG)
-    logger.debug("Printing a debug statement")
-    logger.info("Printing a info statement")
-    logger.warning("Printing a war")
+    logging.config.fileConfig("logging.conf")
+    logger = logging.getLogger(__name__)
+    logger.warning("This is a warning")
     logger.error("This is an critical error")
 
-# formatter = "%(levelname)s :%(name)s :%(message)s"
-# logging.basicConfig(filename="logfile.log", encoding='utf-8', format=formatter, datefmt='%m/%d/%Y %I:%M:%S %p')
+# Another Way One
+# def test_logging():
+#     # set up logging to file
+#     file = logging.FileHandler("logfile.log")  # File for log
+#     formatter = logging.Formatter("%(levelname)s :%(name)s :%(message)s :%(asctime)s")  # Format of log
+#     file.setFormatter(formatter)  # set formatter into file
+#
+#     # set up logging to file
+#     logger = logging.getLogger(__name__)  # obj of log
+#     logger.addHandler(file)  # adding log into file
+#     logger.setLevel(logging.DEBUG)
+#     logger.debug("Printing a debug statement")
+#     logger.info("Printing a info statement")
+#     logger.warning("Printing a war")
+#     logger.error("This is an critical error")
 
+# Another Way Two
+# formatter = "%(levelname)s :%(name)s :%(message)s :%(asctime)s"  # Format of log
+# logging.basicConfig(filename="logfile.log", format=formatter, datefmt='%m/%d/%Y %I:%M:%S %p',
+#                     level=logging.WARNING)  # File for log
+# logger = logging.getLogger(__name__)  # obj of log
+# logger.warning("Printing a war")
+# logger.error("This is a critical error")
