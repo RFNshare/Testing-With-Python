@@ -21,7 +21,7 @@ def setup_data():
 @pytest.fixture()
 def setup_browser(cross_browser):
     print(f"Open {cross_browser} Browser...")
-    yield
+    yield cross_browser
     print(f"Teardown {cross_browser} Browser ...")
 
 

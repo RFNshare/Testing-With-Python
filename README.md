@@ -72,7 +72,7 @@ Behold my periodic learnings, and judge me for my ignorance.
   * To generate html report use `pytest -q --html=regression_report.html`. If you need with filter then ` pytest -q -m smoke --html=smoke_report.html`
   * Generate including CSS in same file `pytest --html=report.html --self-contained-html`
   * using `logging` module & conf file to create a log file and insert `debug, info, error, warning, critical` log.
-  * connecting those log into html report.
+  * connecting those log into html report by using log in test method.
 * Implement Selenium Python Framework (PageObject DesignPattern)
 * Integrating Framework to Jenkins and setup job parameters
 * Data Driven Framework with Excel to Selenium Python Tests
