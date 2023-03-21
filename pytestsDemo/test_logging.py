@@ -4,8 +4,11 @@ import logging.config
 def test_logging():
     logging.config.fileConfig("logging.conf")
     logger = logging.getLogger(__name__)
-    logger.warning("This is a warning")
+    logger.debug("Printing a debug statement")
+    logger.info("Printing a info statement")
+    logger.warning("Printing a war")
     logger.error("This is an critical error")
+    logger.critical("Critical Issues")
 
 # Another Way One
 # def test_logging():
