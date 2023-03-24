@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
+
 class HomePage:
     def __init__(self, driver):
         self.driver = driver
@@ -20,3 +21,6 @@ class HomePage:
     def wait_for_clickable_an_element(self, element):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.element_to_be_clickable(element))
+
+    def take_ss(self, name):
+        self.driver.get_screenshot_as_file(name)
