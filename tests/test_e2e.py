@@ -19,7 +19,7 @@ class TestOne(BaseClass):
 
         # Go To Purchase Page & Purchase
         confirm_page.confirm_purchase()
-        home_page.take_ss("final_page.png")
+        self.take_ss("final_page.png")
 
         # Validate Successful Purchase
         confirm_page.validate_purchase()

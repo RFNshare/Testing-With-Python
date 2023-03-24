@@ -1,11 +1,10 @@
 from selenium.webdriver.common.by import By
-
 from pageObjects.ConfirmPage import ConfirmPage
-from pageObjects.HomePage import HomePage
+from utilities.BaseClass import BaseClass
 from utilities.data import SampleData
 
 
-class CheckOutPage:
+class CheckOutPage(BaseClass):
     all_products_loc = (By.XPATH, "//h4/a")
     product = (By.XPATH, "ancestor::div[@class='card h-100']//button")
 
@@ -21,10 +20,9 @@ class CheckOutPage:
 
     def go_to_checkout(self):
         # Go To Checkout Page
-        home = HomePage(self.driver)
         self.driver.execute_script("window.scrollTo(0, 0);")
         self.driver.find_element(By.PARTIAL_LINK_TEXT, "Checkout").click()
-        home.wait_for_an_element((By.CSS_SELECTOR, ".btn-success"))  # Waiting for Checkout Button In Next Page
+        self.wait_for_an_element((By.CSS_SELECTOR, ".btn-success"))  # Waiting for Checkout Button In Next Page
 
     def confirm_checkout(self):
         self.driver.find_element(By.CSS_SELECTOR, ".btn-success").click()
