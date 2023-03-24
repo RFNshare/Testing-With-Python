@@ -5,22 +5,23 @@ from utilities.data import SampleData
 
 
 class CheckOutPage:
+    all_products_loc = (By.XPATH, "//h4/a")
+    product = (By.XPATH, "ancestor::div[@class='card h-100']//button")
+
     def __init__(self, driver):
         self.driver = driver
 
     def add_products(self):
         # Adding Product Into Cart
-        all_products = self.driver.find_elements(By.XPATH, "//h4/a")
+        all_products = self.driver.find_elements(*CheckOutPage.all_products_loc)
         for product in all_products:
             if product.text in SampleData.product_list:
-                product.find_element(By.XPATH,
-                                     "ancestor::div[@class='card h-100']//button").click()  # Chaining Web Elements
+                product.find_element(*CheckOutPage.product).click()  # Chaining Web Elements
 
     def go_to_checkout(self):
         # Go To Checkout Page
         home = HomePage(self.driver)
         self.driver.execute_script("window.scrollTo(0, 0);")
-        self.driver.get_screenshot_as_file("a.png")
         self.driver.find_element(By.PARTIAL_LINK_TEXT, "Checkout").click()
         home.wait_for_an_element((By.CSS_SELECTOR, ".btn-success"))  # Waiting for Checkout Button In Next Page
 

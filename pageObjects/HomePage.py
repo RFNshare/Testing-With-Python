@@ -4,11 +4,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class HomePage:
+    shop = (By.CSS_SELECTOR, "a[href*='shop']")
+
     def __init__(self, driver):
         self.driver = driver
 
     def shop_items(self):
-        return self.driver.find_element(By.CSS_SELECTOR, "a[href*='shop']")
+        return self.driver.find_element(*HomePage.shop)
 
     def wait_for_an_element(self, element):
         wait = WebDriverWait(self.driver, 10)
