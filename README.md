@@ -76,7 +76,7 @@ Behold my periodic learnings, and judge me for my ignorance.
 * Implement Selenium Python Framework (PageObject DesignPattern)
   * tests folder for contains test cases & config
   * use `request.cls.driver = driver` in conftest to use driver as a class variable.
-  * 
+  * added command line option to choose browser at run time
 * Integrating Framework to Jenkins and setup job parameters
 * Data Driven Framework with Excel to Selenium Python Tests
 
