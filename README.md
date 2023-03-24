@@ -80,7 +80,7 @@ Behold my periodic learnings, and judge me for my ignorance.
   * organize POM for AngularShop Project
     * cross browser setup(pending)
     * optimize page objects, module error(pending)
-  * 
+  * Created custom utilities in BaseClass.
 * Integrating Framework to Jenkins and setup job parameters
 * Data Driven Framework with Excel to Selenium Python Tests
 

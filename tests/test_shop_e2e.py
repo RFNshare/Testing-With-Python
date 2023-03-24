@@ -3,7 +3,7 @@ from pageObjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 
 
-class TestOne(BaseClass):
+class TestShop(BaseClass):
     def test_e2e(self):
         # Go to shop
         home_page = HomePage(self.driver)
