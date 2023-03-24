@@ -1,8 +1,10 @@
 .idea/*.xml
 .idea/*.iml
 drivers
-v2/pythonSelenium/geckodriver.log
+OthersLearnPractice/v2/pythonSelenium/geckodriver.log
 __pycache__/
 *.html
 assets
 pytestsDemo/*.log
+PythonSeleniumFramework/*.png
+OthersLearnPractice/pytestsDemo/*.log

@@ -1,4 +1,4 @@
-from v1.PythonBasics.ClassDemo import Calculator
+from OthersLearnPractice.v1.PythonBasics.ClassDemo import Calculator
 
 
 # qwe = ClassDemo.Calculator(1, 3)

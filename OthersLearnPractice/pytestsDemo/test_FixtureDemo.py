@@ -1,6 +1,6 @@
 import pytest
 from selenium.webdriver.common.by import By
-from Others.pytestsDemo.BaseClass import BaseClass
+from OthersLearnPractice.pytestsDemo.BaseClass import BaseClass
 
 
 # setup data class level
