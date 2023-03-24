@@ -10,6 +10,8 @@ class HomePage:
     submit = (By.XPATH, "//input[@type='submit']")
     radio = (By.CSS_SELECTOR, "#inlineRadio1")
     msg = (By.CLASS_NAME, "alert-success")
+    dropdown = (By.CSS_SELECTOR, "#exampleFormControlSelect1")
+
     def __init__(self, driver):
         self.driver = driver
 
@@ -24,8 +26,12 @@ class HomePage:
 
     def get_pass(self):
         return self.driver.find_element(*HomePage.password)
+
     def get_checkbox(self):
         return self.driver.find_element(*HomePage.checkbox)
+
+    def get_gender_dropdown(self):
+        return self.driver.find_element(*HomePage.dropdown)
 
     def get_submit(self):
         return self.driver.find_element(*HomePage.submit)

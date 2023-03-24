@@ -1,5 +1,7 @@
 import pytest
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 
@@ -19,3 +21,14 @@ class BaseClass:
 
     def take_ss(self, name):
         self.driver.get_screenshot_as_file(name)
+
+    def select_by_visible_text(self, loc, text):
+        select = Select(loc)
+        select.select_by_visible_text(text)
+
+    def hover_on_an_element(self, loc):
+        action = ActionChains(self.driver)
+        action.move_to_element(loc).perform()
+
+    def scroll_to_top(self):
+        self.driver.execute_script("window.scrollTo(0, 0);")

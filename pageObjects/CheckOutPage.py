@@ -20,7 +20,7 @@ class CheckOutPage(BaseClass):
 
     def go_to_checkout(self):
         # Go To Checkout Page
-        self.driver.execute_script("window.scrollTo(0, 0);")
+        self.scroll_to_top()
         self.driver.find_element(By.PARTIAL_LINK_TEXT, "Checkout").click()
         self.wait_for_an_element((By.CSS_SELECTOR, ".btn-success"))  # Waiting for Checkout Button In Next Page
 
