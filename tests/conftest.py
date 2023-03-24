@@ -17,6 +17,7 @@ def pytest_addoption(parser):
 def cross_browser(request):
     return request.param
 
+
 # Pending Cross Browser Implementation
 @pytest.fixture(scope="class")
 def setup(request):
@@ -38,7 +39,7 @@ def setup(request):
         service = Service(EdgeChromiumDriverManager().install())
         _driver = webdriver.Edge(service=service)
 
-    URL = "https://rahulshettyacademy.com/angularpractice/shop"
+    URL = "https://rahulshettyacademy.com/angularpractice"
     # Initialize Browser
 
     _driver.get(URL)
