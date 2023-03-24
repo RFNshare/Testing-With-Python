@@ -8,3 +8,4 @@ assets
 pytestsDemo/*.log
 PythonSeleniumFramework/*.png
 OthersLearnPractice/pytestsDemo/*.log
+tests/*.png
