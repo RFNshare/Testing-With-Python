@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+from pageObjects.ConfirmPage import ConfirmPage
 from pageObjects.HomePage import HomePage
 from utilities.data import SampleData
 
@@ -26,4 +27,6 @@ class CheckOutPage:
         home.wait_for_an_element((By.CSS_SELECTOR, ".btn-success"))  # Waiting for Checkout Button In Next Page
 
     def confirm_checkout(self):
-        return self.driver.find_element(By.CSS_SELECTOR, ".btn-success")
+        self.driver.find_element(By.CSS_SELECTOR, ".btn-success").click()
+        confirm_page = ConfirmPage(self.driver)
+        return confirm_page
