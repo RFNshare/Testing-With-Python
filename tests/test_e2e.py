@@ -1,17 +1,14 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from webdriver_manager.chrome import ChromeDriverManager
+
+from utilities.BaseClass import BaseClass
 
 
-class TestOne:
+class TestOne(BaseClass):
     def test_e2e(self):
-        URL = "https://rahulshettyacademy.com/angularpractice/shop"
-        product_list = ['iphone X', 'Blackberry']
-        country = "Bangladesh"
-        message = "Success"
+        driver = self.driver
 
         # define some pre function
         def wait_for_an_element(element):
@@ -26,18 +23,9 @@ class TestOne:
             wait = WebDriverWait(driver, 10)
             wait.until(EC.element_to_be_clickable(element))
 
-        # Adding Additional Options
-        options = webdriver.ChromeOptions()
-        options.add_argument("--start-maximized")
-        options.add_argument("headless")
-        options.add_argument('window-size=1920,1080')
-
-        # Initialize Browser
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=options)
-        driver.get(URL)
-        driver.implicitly_wait(5)
-
+        product_list = ['iphone X', 'Blackberry']
+        country = "Bangladesh"
+        message = "Success"
         # Adding Product Into Cart
         all_products = driver.find_elements(By.XPATH, "//h4/a")
         for product in all_products:
