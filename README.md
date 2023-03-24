@@ -77,6 +77,10 @@ Behold my periodic learnings, and judge me for my ignorance.
   * tests folder for contains test cases & config
   * use `request.cls.driver = driver` in conftest to use driver as a class variable.
   * added command line option to choose browser at run time
+  * organize POM for AngularShop Project
+    * cross browser setup(pending)
+    * optimize page objects, module error(pending)
+  * 
 * Integrating Framework to Jenkins and setup job parameters
 * Data Driven Framework with Excel to Selenium Python Tests
 
