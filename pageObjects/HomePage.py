@@ -11,6 +11,7 @@ class HomePage:
     radio = (By.CSS_SELECTOR, "#inlineRadio1")
     msg = (By.CLASS_NAME, "alert-success")
     dropdown = (By.CSS_SELECTOR, "#exampleFormControlSelect1")
+    text_bindings = (By.XPATH, "(//input[@type='text'])[3]")
 
     def __init__(self, driver):
         self.driver = driver
@@ -41,3 +42,6 @@ class HomePage:
 
     def get_success_msg(self):
         return self.driver.find_element(*HomePage.msg).text
+
+    def get_text_binding(self):
+        return self.driver.find_element(*HomePage.text_bindings).get_attribute("value")
