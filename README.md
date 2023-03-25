@@ -78,12 +78,16 @@ Behold my periodic learnings, and judge me for my ignorance.
   * use `request.cls.driver = driver` in conftest to use driver as a class variable.
   * added command line option to choose browser at run time
   * organize POM for AngularShop Project
-    * cross browser setup(pending)
-    * optimize page objects, module error(pending)
+    * cross browser setup _**(pending)**_
+    * optimize page objects, module error _**(pending)**_
   * Created custom utilities in BaseClass(waiting, action chains, select etc).
-  * Implement Data driven mechanism(using params[tuples, dic])
-* Integrating Framework to Jenkins and setup job parameters
-* Data Driven Framework with Excel to Selenium Python Tests
+  * Implement Data driven mechanism(using params tuples).
+  * Parameterizing tests with multiple data sets using dictionary.
+  * Implement Logging into framework.
+    * custom path is not working on pytest cmd _**(pending)**_
+  * Generate HTML Report with logging integration.
+* Integrating Framework to Jenkins and setup job parameters.
+* Data Driven Framework with Excel to Selenium Python Tests.
 
 ### Miscellaneous
 

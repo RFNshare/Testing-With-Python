@@ -10,3 +10,8 @@ PythonSeleniumFramework/*.png
 OthersLearnPractice/pytestsDemo/*.log
 tests/*.png
 *.png
+*.log
+output/logs/*.log
+output/reports/assets
+output/reports/*.html
+output/screenshots/*.png
