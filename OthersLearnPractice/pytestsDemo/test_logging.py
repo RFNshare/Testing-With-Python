@@ -1,8 +1,10 @@
 import logging.config
+from pathlib import Path
 
 
 def test_logging():
-    logging.config.fileConfig("logging.conf")
+    LOGGING_CONFIG = Path(__file__).parent / 'logging.conf'
+    logging.config.fileConfig(LOGGING_CONFIG)
     logger = logging.getLogger(__name__)
     logger.debug("Printing a debug statement")
     logger.info("Printing a info statement")
