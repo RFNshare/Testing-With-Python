@@ -16,7 +16,7 @@ def pytest_addoption(parser):
         choices=("chrome", "firefox", "edge", "all")
     )
     parser.addoption(
-        "--env_name", action="store", default="chrome", help="browser options: qa/uat/prod",
+        "--env_name", action="store", default="qa", help="browser options: qa/uat/prod",
         choices=("qa", "uat", "prod")
     )
     parser.addoption(
