@@ -14,4 +14,5 @@ tests/*.png
 output/logs/*.log
 output/reports/assets
 output/reports/*.html
+output/reports/*.xml
 output/screenshots/*.png

@@ -88,7 +88,11 @@ Behold my periodic learnings, and judge me for my ignorance.
   * Generate HTML Report with logging integration.
     * run `pytest tests/ --html=output/reports/report.html` to run test cases & generate reports for angularshop project.
   * Added method to take ss when a test case fail & add into html report.
+  * Completed all topics in angular shop projects(run test cases, capture logs, taking ss when fails, generate html reports)
 * Integrating Framework to Jenkins and setup job parameters.
+  * Setup jenkins config to run test cases from jenkins dashboard.
+  * Run test with dynamic parameter in jenkins.
+  * Created XML report & convert to JUNIT report. Show report in Jenkins dashboard.
 * Data Driven Framework with Excel to Selenium Python Tests.
 
 ### Miscellaneous

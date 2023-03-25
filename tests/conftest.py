@@ -7,12 +7,21 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
-
 _driver = None
+
+
 def pytest_addoption(parser):
     parser.addoption(
         "--browser_name", action="store", default="chrome", help="browser options: chrome/firefox/edge/all",
         choices=("chrome", "firefox", "edge", "all")
+    )
+    parser.addoption(
+        "--env_name", action="store", default="chrome", help="browser options: qa/uat/prod",
+        choices=("qa", "uat", "prod")
+    )
+    parser.addoption(
+        "--h", action="store", default="chrome", help="browser options: yes/no",
+        choices=("yes", "no")
     )
 
 
@@ -26,12 +35,15 @@ def cross_browser(request):
 def setup(request):
     global _driver
     browser_name = request.config.getoption("browser_name")
+    env_name = request.config.getoption("env_name")
+    headless_mode = request.config.getoption("h")
     if browser_name == "chrome":
         # Adding Additional Options
         options = webdriver.ChromeOptions()
         # options.add_argument("--start-maximized")
-        # options.add_argument("headless")
-        # options.add_argument('window-size=1920,1080')
+        if headless_mode == "yes":
+            options.add_argument("headless")
+            options.add_argument('window-size=1920,1080')
         service = Service(ChromeDriverManager().install())
         service = Service(ChromeDriverManager().install())
         _driver = webdriver.Chrome(service=service, options=options)
@@ -42,8 +54,10 @@ def setup(request):
         service = Service(EdgeChromiumDriverManager().install())
         _driver = webdriver.Edge(service=service)
 
-    URL = "https://rahulshettyacademy.com/angularpractice"
-    # Initialize Browser
+    if env_name in ("qa", "uat"):
+        URL = "https://rahulshettyacademy.com/angularpractice"
+    else:
+        URL = "https://rahulshettyacademy.com/"
 
     _driver.get(URL)
     _driver.implicitly_wait(5)
@@ -68,7 +82,7 @@ def pytest_runtest_makereport(item):
     if report.when == 'call' or report.when == "setup":
         xfail = hasattr(report, 'wasxfail')
         if (report.skipped and xfail) or (report.failed and not xfail):
-            file_name = (report.nodeid.replace("::","_")).replace("/","__")+".png"
+            file_name = (report.nodeid.replace("::", "_")).replace("/", "__") + ".png"
             SS_PATH = Path(__file__).parent / "../output/screenshots"
             _capture_screenshot(SS_PATH / file_name)
             if file_name:
