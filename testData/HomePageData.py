@@ -8,7 +8,7 @@ class HomePageData:
                           {"first_name": "Faroque", "email": "rfnshare@gmail.com", "password": "4321"}]
 
     @staticmethod
-    def get_test_data():
+    def get_test_data(TestCase):
         EXCEL_PATH = Path(__file__).parent / 'PythonDemo.xlsx'
         book = openpyxl.load_workbook(EXCEL_PATH)
         sheet = book.active
@@ -20,8 +20,9 @@ class HomePageData:
             for j in range(1, sheet.max_column + 1):
                 keys.append(sheet.cell(row=i, column=j).value)
         for i in range(2, sheet.max_row + 1):
-            for j in range(1, sheet.max_column + 1):
-                values[k].append(sheet.cell(row=i, column=j).value)
+            if sheet.cell(row=i, column=1).value == TestCase:
+                for j in range(1, sheet.max_column + 1):
+                    values[k].append(sheet.cell(row=i, column=j).value)
             k += 1
         lst_dic = []
         for i in values:
