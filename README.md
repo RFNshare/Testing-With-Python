@@ -94,6 +94,8 @@ Behold my periodic learnings, and judge me for my ignorance.
   * Run test with dynamic parameter in jenkins.
   * Created XML report & convert to JUNIT report. Show report in Jenkins dashboard.
 * Data Driven Framework with Excel to Selenium Python Tests.
+  * practice excel read/write/read to dic using `openpyxl` module
+  * using excel data to test angular form with multiple data.
 
 ### Miscellaneous
 
