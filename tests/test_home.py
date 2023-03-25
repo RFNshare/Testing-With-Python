@@ -24,6 +24,10 @@ class TestHomePage(BaseClass):
         log.info("Validate Name In Second Field")
         self.driver.refresh()
 
-    @pytest.fixture(params=HomePageData.test_homepage_data)
+    # @pytest.fixture(params=HomePageData.get_test_data("TestCase2"))
+    # def get_data(self, request):
+    #     return request.param
+
+    @pytest.fixture(params=HomePageData.get_test_data())
     def get_data(self, request):
         return request.param
