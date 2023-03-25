@@ -22,3 +22,4 @@ class CheckoutPageLocators:
 class ConfirmPageLocators:
     purchase_btn = (By.CSS_SELECTOR, "[value='Purchase']")
     success_msg = (By.CSS_SELECTOR, "[class*='alert-success']")
+    country = (By.ID, "country")

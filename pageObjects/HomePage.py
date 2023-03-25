@@ -3,7 +3,7 @@ from utilities.BaseClass import BaseClass
 from utilities.locators import HomePageLocators
 
 
-class HomePage(BasePage, BaseClass):
+class HomePage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -14,7 +14,7 @@ class HomePage(BasePage, BaseClass):
         return self.find_element(*self.locator.shop)
 
     def get_name(self):
-        self.scroll_to_down()
+        self.scroll_down()
         return self.find_element(*self.locator.name)
 
     def get_email(self):
@@ -39,4 +39,4 @@ class HomePage(BasePage, BaseClass):
         return self.find_element(*self.locator.msg).text
 
     def get_text_binding(self):
-        return self.find_element(*self.locator.text_bindings).get_attribute("value")
+        return self.get_attribute_value("value", *self.locator.text_bindings)

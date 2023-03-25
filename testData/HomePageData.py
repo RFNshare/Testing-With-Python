@@ -3,7 +3,14 @@ from pathlib import Path
 import openpyxl
 
 
+# need to define data for dev or qa
 class HomePageData:
+    message = "Success"
+    name = "Abdullah Al Faroque"
+    email = "aalfaroque@gmail.com"
+    password = "123456"
+    txt = "Hello Again"
+    success_message = "Success"
     test_homepage_data = [{"first_name": "Abdullah Al", "email": "aalfaroque@gmail.com", "password": "12345"},
                           {"first_name": "Faroque", "email": "rfnshare@gmail.com", "password": "4321"}]
 

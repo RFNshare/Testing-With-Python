@@ -1,9 +1,7 @@
 import pytest
-
 from pageObjects.HomePage import HomePage
 from testData.HomePageData import HomePageData
 from utilities.BaseClass import BaseClass
-from utilities.data import SampleData
 
 
 class TestHomePage(BaseClass):
@@ -18,7 +16,7 @@ class TestHomePage(BaseClass):
         home_page.get_radio().click()
         home_page.get_submit().click()
         msg = home_page.get_success_msg()
-        assert SampleData.success_message in msg
+        assert HomePageData.success_message in msg
         log.info("Fill up Form & Validated with email " + get_data["email"])
         assert home_page.get_text_binding() == get_data["first_name"]
         log.info("Validate Name In Second Field")
