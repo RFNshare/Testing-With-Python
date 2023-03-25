@@ -86,6 +86,8 @@ Behold my periodic learnings, and judge me for my ignorance.
   * Implement Logging into framework.
     * custom path is not working on pytest cmd _**(pending)**_
   * Generate HTML Report with logging integration.
+    * run `pytest tests/ --html=output/reports/report.html` to run test cases & generate reports for angularshop project.
+  * Added method to take ss when a test case fail & add into html report.
 * Integrating Framework to Jenkins and setup job parameters.
 * Data Driven Framework with Excel to Selenium Python Tests.
 
