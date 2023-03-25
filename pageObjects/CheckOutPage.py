@@ -2,21 +2,21 @@ from selenium.webdriver.common.by import By
 from pageObjects.ConfirmPage import ConfirmPage
 from utilities.BaseClass import BaseClass
 from utilities.data import SampleData
+from utilities.locators import CheckoutPageLocators
 
 
 class CheckOutPage(BaseClass):
-    all_products_loc = (By.XPATH, "//h4/a")
-    product = (By.XPATH, "ancestor::div[@class='card h-100']//button")
 
     def __init__(self, driver):
         self.driver = driver
+        self.locator = CheckoutPageLocators
 
     def add_products(self):
         # Adding Product Into Cart
-        all_products = self.driver.find_elements(*CheckOutPage.all_products_loc)
+        all_products = self.driver.find_elements(*self.locator.all_products_loc)
         for product in all_products:
             if product.text in SampleData.product_list:
-                product.find_element(*CheckOutPage.product).click()  # Chaining Web Elements
+                product.find_element(*self.locator.product).click()  # Chaining Web Elements
 
     def go_to_checkout(self):
         # Go To Checkout Page

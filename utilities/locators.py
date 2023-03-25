@@ -12,3 +12,13 @@ class HomePageLocators:
     msg = (By.CLASS_NAME, "alert-success")
     dropdown = (By.CSS_SELECTOR, "#exampleFormControlSelect1")
     text_bindings = (By.XPATH, "(//input[@type='text'])[3]")
+
+
+class CheckoutPageLocators:
+    all_products_loc = (By.XPATH, "//h4/a")
+    product = (By.XPATH, "ancestor::div[@class='card h-100']//button")
+
+
+class ConfirmPageLocators:
+    purchase_btn = (By.CSS_SELECTOR, "[value='Purchase']")
+    success_msg = (By.CSS_SELECTOR, "[class*='alert-success']")
