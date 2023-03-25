@@ -8,6 +8,7 @@ from utilities.data import SampleData
 
 class TestHomePage(BaseClass):
     def test_form_submit(self, get_data):
+        log = self.get_logger()
         home_page = HomePage(self.driver)
         home_page.get_name().send_keys(get_data["first_name"])
         home_page.get_email().send_keys(get_data["email"])
@@ -18,7 +19,9 @@ class TestHomePage(BaseClass):
         home_page.get_submit().click()
         msg = home_page.get_success_msg()
         assert SampleData.success_message in msg
+        log.info("Fill up Form & Validated with email " + get_data["email"])
         assert home_page.get_text_binding() == get_data["first_name"]
+        log.info("Validate Name In Second Field")
         self.driver.refresh()
 
     @pytest.fixture(params=HomePageData.test_homepage_data)
