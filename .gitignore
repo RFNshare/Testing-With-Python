@@ -16,3 +16,5 @@ output/reports/assets
 output/reports/*.html
 output/reports/*.xml
 output/screenshots/*.png
+output/reports/*.xml-s
+output/allure_reports/

@@ -2,8 +2,11 @@ import pytest
 from pageObjects.HomePage import HomePage
 from testData.ui_test_data.HomePageData import HomePageData
 from utilities.BaseClass import BaseClass
+import allure
 
 
+@allure.title("Home Page - test")
+@allure.description("Checking if homepage form submitted properly")
 class TestHomePage(BaseClass):
     def test_form_submit(self, get_data):
         log = self.get_logger()
