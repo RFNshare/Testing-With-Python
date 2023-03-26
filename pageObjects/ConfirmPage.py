@@ -1,13 +1,11 @@
 from selenium.webdriver.common.by import By
-from seleniumpagefactory import PageFactory
-
 from pageObjects.BasePage import BasePage
 from testData.ui_test_data.HomePageData import HomePageData
 from testData.ui_test_data.ShopPageData import ShopData
 from utilities.locators import ConfirmPageLocators
 
 
-class ConfirmPage(BasePage, PageFactory):
+class ConfirmPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)

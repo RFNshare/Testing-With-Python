@@ -2,6 +2,11 @@ import openpyxl
 import pandas as pd
 
 
+def read_data_from_excel(file, sheet_name):
+    df = pd.read_excel(file, sheet_name)
+    return df.to_dict(orient="records")[0]
+
+
 def read_configuration_data_from_excel(file, sheet_name="configuration"):
     df = pd.read_excel(file, sheet_name)
     return df.to_dict(orient="records")[0]
@@ -32,4 +37,3 @@ def update_excel_column_value(file, sheet_name, column_name, new_value):
         if row[0].value == column_name:
             row[1].value = new_value
     workbook.save(file)
-

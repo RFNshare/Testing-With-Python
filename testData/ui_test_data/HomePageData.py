@@ -2,6 +2,8 @@ from pathlib import Path
 
 import openpyxl
 
+from utilities.excel_utils import read_configuration_data_from_excel
+
 
 # need to define data for dev or qa
 class HomePageData:
@@ -13,6 +15,11 @@ class HomePageData:
     success_message = "Success"
     test_homepage_data = [{"first_name": "Abdullah Al", "email": "aalfaroque@gmail.com", "password": "12345"},
                           {"first_name": "Faroque", "email": "rfnshare@gmail.com", "password": "4321"}]
+    EXCEL_PATH = Path(__file__).parent.parent / 'test_data.xlsx'
+    configuration_data = read_configuration_data_from_excel(EXCEL_PATH)
+    url = configuration_data["frontend_url"]
+    h_mode = configuration_data["headless"]
+    browser = configuration_data["browser"].casefold()
 
     @staticmethod
     def get_test_data(TestCase):

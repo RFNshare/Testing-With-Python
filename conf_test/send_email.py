@@ -13,7 +13,7 @@ envs = dotenv_values('.env')
 
 
 def send_report(receiver_email, reports, project_name):
-    sender = 'sompodsrkr@gmail.com'
+    sender = 'test@gmail.com'
     receiver = receiver_email
 
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

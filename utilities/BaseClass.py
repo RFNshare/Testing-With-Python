@@ -1,4 +1,6 @@
+import glob
 import inspect
+import os
 from datetime import datetime
 from pathlib import Path
 import pytest
@@ -19,7 +21,7 @@ class BaseClass:
 
     def take_ss(self, name):
         SS_PATH = Path(__file__).parent / "../output/screenshots"
-        self.driver.get_screenshot_as_file(SS_PATH/name)
+        self.driver.get_screenshot_as_file(SS_PATH / name)
 
     def select_by_visible_text(self, loc, text):
         select = Select(loc)
@@ -28,7 +30,6 @@ class BaseClass:
     # Read current date
     def read_date(self):
         return str(datetime.today().strftime('%Y-%m-%d'))
-
 
     # function to read current date and time
     def read_datetime(self):
@@ -40,20 +41,3 @@ class BaseClass:
 
     def read_time(self):
         return str(datetime.today().strftime('%H-%M-%S'))
-    @staticmethod
-    # function to read last email message
-    def get_otp_from_email(email_credentials=None):
-        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-        mail.login(email_credentials['email'], email_credentials['password'])
-        mail.select("INBOX")
-        result, data = mail.search(None, "ALL")
-        ids = data[0]
-        id_list = ids.split()
-        latest_email_id = id_list[-1]
-        result, data = mail.fetch(latest_email_id, "(RFC822)")
-        raw_email = data[0][1]
-        re_match = re.search(r'Your OTP is (\d{6})', str(raw_email))
-        otp = re_match.groups()[0]
-        return otp
-
-

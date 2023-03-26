@@ -7,22 +7,25 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
+from testData.ui_test_data.HomePageData import HomePageData
+from utilities.excel_utils import read_configuration_data_from_excel
+
 _driver = None
 
 
-def pytest_addoption(parser):
-    parser.addoption(
-        "--browser_name", action="store", default="chrome", help="browser options: chrome/firefox/edge/all",
-        choices=("chrome", "firefox", "edge", "all")
-    )
-    parser.addoption(
-        "--env_name", action="store", default="qa", help="browser options: qa/uat/prod",
-        choices=("qa", "uat", "prod")
-    )
-    parser.addoption(
-        "--h", action="store", default="chrome", help="browser options: yes/no",
-        choices=("yes", "no")
-    )
+# def pytest_addoption(parser):
+#     parser.addoption(
+#         "--browser_name", action="store", default="chrome", help="browser options: chrome/firefox/edge/all",
+#         choices=("chrome", "firefox", "edge", "all")
+#     )
+#     parser.addoption(
+#         "--env_name", action="store", default="qa", help="browser options: qa/dev/prod",
+#         choices=("qa", "dev", "prod")
+#     )
+#     parser.addoption(
+#         "--h", action="store", default="chrome", help="browser options: yes/no",
+#         choices=("yes", "no")
+#     )
 
 
 @pytest.fixture(params=["chrome", "firefox", "edge"])
@@ -34,9 +37,13 @@ def cross_browser(request):
 @pytest.fixture(scope="class")
 def setup(request):
     global _driver
-    browser_name = request.config.getoption("browser_name")
-    env_name = request.config.getoption("env_name")
-    headless_mode = request.config.getoption("h")
+    # browser_name = request.config.getoption("browser_name")
+    browser_name = HomePageData.browser
+    url = HomePageData.url
+    headless_mode = HomePageData.h_mode
+    # env_name = request.config.getoption("env_name")
+    # headless_mode = request.config.getoption("h")
+
     if browser_name == "chrome":
         # Adding Additional Options
         options = webdriver.ChromeOptions()
@@ -44,7 +51,6 @@ def setup(request):
         if headless_mode == "yes":
             options.add_argument("headless")
             options.add_argument('window-size=1920,1080')
-        service = Service(ChromeDriverManager().install())
         service = Service(ChromeDriverManager().install())
         _driver = webdriver.Chrome(service=service, options=options)
     elif browser_name == "firefox":
@@ -54,12 +60,12 @@ def setup(request):
         service = Service(EdgeChromiumDriverManager().install())
         _driver = webdriver.Edge(service=service)
 
-    if env_name in ("qa", "uat"):
-        URL = "https://rahulshettyacademy.com/angularpractice"
-    else:
-        URL = "https://rahulshettyacademy.com/"
+    # if env_name in ("qa", "uat"):
+    #     URL = "https://rahulshettyacademy.com/angularpractice"
+    # else:
+    #     URL = "https://rahulshettyacademy.com/"
 
-    _driver.get(URL)
+    _driver.get(url)
     _driver.implicitly_wait(5)
     _driver.maximize_window()
     request.cls.driver = _driver  # Initialize driver as class variable. whoever class use this fixture they can use
