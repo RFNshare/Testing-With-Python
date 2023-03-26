@@ -15,6 +15,7 @@ class BasePage(BaseClass):
     '''
        Basic Actions
     '''
+
     def find_element(self, *locator):
         return self.driver.find_element(*locator)
 
@@ -74,6 +75,7 @@ class BasePage(BaseClass):
     '''
         iFrame Actions
     '''
+
     def change_frame(self, locator):
         self.driver.switch_to.frame(locator)
 
@@ -84,6 +86,7 @@ class BasePage(BaseClass):
     '''
         Basic Validations
     '''
+
     # Element is displayed or not
     def element_is_displayed(self, *locator):
         element = self.find_element(*locator)
@@ -138,6 +141,7 @@ class BasePage(BaseClass):
     '''
        ActionChains Text Field Actions
     '''
+
     # select all the word from text content
     def select_all(self, *locator):
         try:
@@ -259,6 +263,7 @@ class BasePage(BaseClass):
     '''
        ActionChains Drag&Drop Actions
     '''
+
     # drag and drop functions
     def drag_and_drop(self, source_locator, target_locator):
         print(source_locator, target_locator)
@@ -421,6 +426,7 @@ class BasePage(BaseClass):
     '''
         ActionChains Advanced Actions
     '''
+
     def move_cursor_to_element(self, *locator):
         element = self.driver.find_element(*locator)
         actions = ActionChains(self.driver)
@@ -513,6 +519,7 @@ class BasePage(BaseClass):
     '''
         Validation Actions
     '''
+
     def assert_element_is_displayed(self, message="element is found", *locator):
         res = self.element_is_displayed(*locator)
         # print(res)

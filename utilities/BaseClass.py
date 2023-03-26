@@ -29,7 +29,8 @@ class BaseClass:
     def read_date(self):
         return str(datetime.today().strftime('%Y-%m-%d'))
 
-# function to read current date and time
+
+    # function to read current date and time
     def read_datetime(self):
         return str(datetime.today().strftime('%Y-%m-%d-%H-%M-%S'))
 

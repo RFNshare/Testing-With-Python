@@ -52,3 +52,4 @@ def send_report(receiver_email, reports, project_name):
 
     except Exception as e:
         print("Failed to send mail!!!, Error:", e)
+
