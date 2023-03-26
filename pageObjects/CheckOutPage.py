@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from pageObjects.BasePage import BasePage
 from pageObjects.ConfirmPage import ConfirmPage
-from testData.ShopPageData import ShopData
+from testData.ui_test_data.ShopPageData import ShopData
 from utilities.locators import CheckoutPageLocators
 
 
