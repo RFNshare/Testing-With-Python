@@ -1,4 +1,5 @@
 import inspect
+from datetime import datetime
 from pathlib import Path
 import pytest
 from selenium.webdriver.support.select import Select
@@ -21,6 +22,11 @@ class BaseClass:
     def select_by_visible_text(self, loc, text):
         select = Select(loc)
         select.select_by_visible_text(text)
+
+    # Read current date
+    def read_date(self):
+        return str(datetime.today().strftime('%Y-%m-%d'))
+
 
 
 
