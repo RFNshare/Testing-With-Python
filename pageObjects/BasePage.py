@@ -188,6 +188,26 @@ class BasePage(BaseClass):
         for i in range(times):
             self.driver.find_element(*locator).send_keys(Keys.CONTROL + Keys.ARROW_DOWN)
 
+    def type_text(self, element, text=''):
+        """
+        :param element: WebElement to type text
+        :param element:
+        :param text:
+        :return:
+        """
+        try:
+            assert True if self.scroll_to_web_element_with_javascript(element) else "Unable to scroll to element"
+            self.get_wait(2).until(EC.visibility_of(self.find_element(*element)))
+            el = self.driver.find_element(*element)
+            el.send_keys(Keys.CONTROL + "a")
+            el.send_keys(Keys.DELETE)
+            el.send_keys(text)
+            return True
+
+        except Exception as e:
+            print("Element not found, ", e)
+            return False
+
     '''
        Get Text, Values Actions
     '''
@@ -251,6 +271,18 @@ class BasePage(BaseClass):
         source = self.driver.find_element(*source_locator)
         drag_and_drop = ActionChains(self.driver).drag_and_drop_by_offset(source, xoffset, yoffset)
         drag_and_drop.perform()
+
+    def drag_and_drop_web_element_with_javascript(self):
+        try:
+            self.driver.execute_script("""
+            var el = document.getElementById(`${draggable_element_id}`);
+            var dt = document.getElementById(`${drop_target_element_id}`);
+            dt.appendChild(el);
+            """)
+            return True
+        except Exception as e:
+            print("Element not found, ", e)
+            return False
 
     '''
     ActionChains Dropdown Actions
@@ -360,6 +392,32 @@ class BasePage(BaseClass):
         handles = self.driver.window_handles
         return len(handles)
 
+    def check_url_in_new_tab(self, new_tab_url):
+        """
+        check url in a new tab
+        :param new_tab_url:
+        :return:
+        """
+        try:
+            try:
+                tabs = self.driver.window_handles
+                if len(tabs) > 1:
+                    self.driver.switch_to.window(tabs[1])
+                if self.driver.get_current_url() != new_tab_url:
+                    assert False
+                if len(tabs) > 1:
+                    self.driver.close()
+                    self.driver.switch_to.window(tabs[0])
+                else:
+                    self.driver.switch_to.window(tabs[0])
+                return True
+            except Exception as e:
+                print("Element not found, ", e)
+                return False
+        except Exception as e:
+            print("Element not found, ", e)
+            return False
+
     '''
         ActionChains Advanced Actions
     '''
@@ -390,6 +448,67 @@ class BasePage(BaseClass):
 
     def open_new_tab_on_browser(self, url):
         self.driver.execute_script(f'''window.open("{url}", "_blank");''')
+
+    def accept_browser_alert(self):
+        try:
+            self.get_wait(1).until(EC.alert_is_present())
+            self.driver.switch_to.alert.accept()
+            self.driver.switch_to.default_content()
+            return True
+        except Exception as e:
+            print("No alert was there to accept, ", e)
+
+    def click_on_web_element_using_javascript(self, element):
+        try:
+            self.driver.execute_script("arguments[0].click();", element)
+            if self.accept_browser_alert():
+                print("Alert is present")
+            else:
+                print("Alert is not present")
+            return True
+        except Exception as e:
+            print("Element not found, ", e)
+
+    def copy_text_from_element_using_javascript(self, element):
+        """
+        This method will copy text from element using javascript
+        :param element:
+        :return:
+        """
+        try:
+            self.driver.execute_script("arguments[0].select();", element)
+            self.driver.execute_script("document.execCommand('Copy');")
+            return True
+        except Exception as e:
+            print("Element not found, ", e)
+
+    def paste_text_to_element_using_javascript(self, element):
+        """
+        This method will paste text to element using javascript
+        :param element:
+        :return:
+        """
+        try:
+            self.driver.execute_script("arguments[0].select();", element)
+            self.driver.execute_script("document.execCommand('Paste');")
+            return True
+        except Exception as e:
+            print("Element not found, ", e)
+
+    @staticmethod
+    def upload_image(element, image_name):
+        """
+        This method will take image name age process it to get it's absolute path and then send it to file input
+        :param element:
+        :param image_name:
+        :return:
+        """
+        try:
+            file = os.path.abspath(image_name)
+            element.send_keys(file)
+            return True
+        except Exception as e:
+            print(e)
 
     '''
         Validation Actions
