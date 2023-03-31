@@ -25,6 +25,11 @@ class TestHomePage(BaseClass):
         log.info("Validate Name In Second Field")
         self.driver.refresh()
 
+    # @pytest.mark.parametrize(
+    #     "browser_name",
+    #     ["chrome", "firefox", "edge"],
+    #     ids=["Chrome Browser TEST", "Firefox Browser TEST", "Edge Browser TEST"]
+    # )
     @pytest.fixture(params=HomePageData.get_test_data("TestCase2"))
     def get_data(self, request):
         return request.param

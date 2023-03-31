@@ -28,14 +28,14 @@ _driver = None
 #     )
 
 
-@pytest.fixture(params=["chrome", "firefox", "edge"])
+@pytest.fixture(params=HomePageData.b)
 def cross_browser(request):
     return request.param
 
 
 # Pending Cross Browser Implementation
-@pytest.fixture(scope="class")
-def setup(request):
+@pytest.fixture()
+def setup(request, cross_browser):
     global _driver
     # browser_name = request.config.getoption("browser_name")
     browser_name = HomePageData.browser
@@ -44,7 +44,7 @@ def setup(request):
     # env_name = request.config.getoption("env_name")
     # headless_mode = request.config.getoption("h")
 
-    if browser_name == "chrome":
+    if cross_browser == "chrome":
         # Adding Additional Options
         options = webdriver.ChromeOptions()
         # options.add_argument("--start-maximized")
@@ -53,10 +53,10 @@ def setup(request):
             options.add_argument('window-size=1920,1080')
         service = Service(ChromeDriverManager().install())
         _driver = webdriver.Chrome(service=service, options=options)
-    elif browser_name == "firefox":
+    elif cross_browser == "firefox":
         service = Service(GeckoDriverManager().install())
         _driver = webdriver.Firefox(service=service)
-    elif browser_name == "edge":
+    elif cross_browser == "edge":
         service = Service(EdgeChromiumDriverManager().install())
         _driver = webdriver.Edge(service=service)
 
