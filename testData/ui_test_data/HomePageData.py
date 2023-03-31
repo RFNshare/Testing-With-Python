@@ -20,6 +20,11 @@ class HomePageData:
     url = configuration_data["frontend_url"]
     h_mode = configuration_data["headless"]
     browser = configuration_data["browser"].casefold()
+    b = []
+    if browser == 'all':
+        b = ["chrome", "firefox", "edge"]
+    else:
+        b.append(configuration_data["browser"].casefold())
 
     @staticmethod
     def get_test_data(TestCase):

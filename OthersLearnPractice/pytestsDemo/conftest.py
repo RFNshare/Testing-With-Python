@@ -7,12 +7,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
+from testData.ui_test_data.HomePageData import HomePageData
+
 
 # Scope on class level
 @pytest.fixture(scope="class")
 def setup_data():
     print("Initialize Variables For Set...")
-    lst = ["https://the-internet.herokuapp.com/tinymce", "Abdullah Al Faroque"]
+    lst = ["https://example.com/", "Abdullah Al Faroque"]
     yield lst
     print("Cleanup Test Cases Data ...")
 
@@ -26,7 +28,7 @@ def setup_browser(cross_browser):
 
 
 # @pytest.fixture(params=[("chrome", "raju", "pass"), ("firefox", "raju"), "edge"]) # For send more data per run
-@pytest.fixture(params=["chrome", "firefox", "edge"])
+@pytest.fixture(params=HomePageData.b)
 def cross_browser(request):
     return request.param
 
