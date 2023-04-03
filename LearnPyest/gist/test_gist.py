@@ -1,4 +1,5 @@
 import pytest
+import logging
 
 
 def test_first() -> None:
@@ -65,3 +66,19 @@ def test_raise_covid19_exception_should_pass() -> None:
     with pytest.raises(ValueError) as e:
         raise_covid19_exception()
     assert "CoronaVirus Exception" == str(e.value)
+
+
+logger = logging.getLogger("LOGS")
+
+
+def function_that_logs_something() -> None:
+    try:
+        raise ValueError("This is an exception")
+    except ValueError as e:
+        logger.warning(f"Logging {str(e)}")
+
+
+def test_logged_warning_level(caplog) -> None:
+    function_that_logs_something()
+    print(caplog.text)
+    assert "Logging This is an exception" in caplog.text
