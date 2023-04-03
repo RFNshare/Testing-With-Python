@@ -36,6 +36,10 @@ a = driver.find_elements(By.XPATH, '//input[@type="text"]')
 print(a[2].get_attribute("value"))
 for i in a:
     print(i.is_displayed())
-print(driver.find_element(By.CLASS_NAME, "alert-success").value_of_css_property("padding-right"))
+print(
+    driver.find_element(By.CLASS_NAME, "alert-success").value_of_css_property(
+        "padding-right"
+    )
+)
 time.sleep(5)
 driver.close()

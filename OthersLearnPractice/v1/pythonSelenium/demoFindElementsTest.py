@@ -28,4 +28,6 @@ print(f"Found Total {len(search_results)} Countries")
 for i in search_results:
     if i.text == "India":
         i.click()
-assert "India" in driver.find_element(By.CSS_SELECTOR, "input[class~='inputs']").get_attribute("value")
+assert "India" in driver.find_element(
+    By.CSS_SELECTOR, "input[class~='inputs']"
+).get_attribute("value")

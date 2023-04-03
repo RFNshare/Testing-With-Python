@@ -7,7 +7,7 @@ if ItemsInCart != 2:
 # assert (ItemsInCart == 2)
 
 try:
-    with open('filelog.txt', 'r') as reader:
+    with open("filelog.txt", "r") as reader:
         reader.read()
 except Exception as e:
     print(e, "File Not Found")

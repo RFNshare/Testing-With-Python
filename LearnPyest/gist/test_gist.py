@@ -52,7 +52,7 @@ def test_with_fixture(company: Company) -> None:
 @pytest.mark.parametrize(
     "company_name",
     ["TikTok", "Instagram", "Twitch"],
-    ids=["TICKTOK TEST", "INSTA TEST", "TWITCH TEST"]
+    ids=["TICKTOK TEST", "INSTA TEST", "TWITCH TEST"],
 )
 def test_params(company_name: str) -> None:
     print(f"\nTest With {company_name}")
@@ -82,3 +82,9 @@ def test_logged_warning_level(caplog) -> None:
     function_that_logs_something()
     print(caplog.text)
     assert "Logging This is an exception" in caplog.text
+
+
+def test_logged_info_level(caplog) -> None:
+    with caplog.at_level(logging.INFO):
+        logging.info("Hello")
+        assert "Hello" in caplog.text

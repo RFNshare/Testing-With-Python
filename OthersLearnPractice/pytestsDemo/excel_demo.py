@@ -18,5 +18,3 @@ print(book.save("PythonDemo.xlsx"))
 #     if sheet.cell(row=row, column=1).value == "TestCase2":
 #         for column in range(1, sheet.max_column + 1):
 #             print(sheet.cell(row=row, column=column).value)
-
-

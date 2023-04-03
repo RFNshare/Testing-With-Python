@@ -12,7 +12,9 @@ URL = "https://rahulshettyacademy.com/angularpractice"
 driver.get(URL)
 
 # ID, Xpath, CSSSelector, CLassName, Name, LinkText
-driver.find_element(By.CSS_SELECTOR, "input[name='name']").send_keys("Abdullah Al Faroque")
+driver.find_element(By.CSS_SELECTOR, "input[name='name']").send_keys(
+    "Abdullah Al Faroque"
+)
 driver.find_element(By.NAME, "email").send_keys("aalfaroque@gmail.com")
 driver.find_element(By.ID, "exampleInputPassword1").send_keys("123456")
 driver.find_element(By.ID, "exampleCheck1").click()

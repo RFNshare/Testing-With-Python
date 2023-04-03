@@ -24,6 +24,8 @@ driver.find_element(By.CSS_SELECTOR, "#password").send_keys("learning")
 driver.find_element(By.ID, "terms").click()
 driver.find_element(By.NAME, "signin").click()
 wait = WebDriverWait(driver, 10)
-wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div[class*='alert-danger']")))
+wait.until(
+    EC.visibility_of_element_located((By.CSS_SELECTOR, "div[class*='alert-danger']"))
+)
 err_txt = driver.find_element(By.CSS_SELECTOR, "div[class*='alert-danger']").text
 assert "Incorrect" in err_txt

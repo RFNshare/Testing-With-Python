@@ -13,7 +13,7 @@ import re
 @pytest.mark.usefixtures("setup")
 class BaseClass:
     def get_logger(self):
-        LOGGING_CONFIG = Path(__file__).parent / 'logging.conf'
+        LOGGING_CONFIG = Path(__file__).parent / "logging.conf"
         logging.config.fileConfig(LOGGING_CONFIG)
         logger_name = inspect.stack()[1][3]
         logger = logging.getLogger(logger_name)
@@ -29,15 +29,15 @@ class BaseClass:
 
     # Read current date
     def read_date(self):
-        return str(datetime.today().strftime('%Y-%m-%d'))
+        return str(datetime.today().strftime("%Y-%m-%d"))
 
     # function to read current date and time
     def read_datetime(self):
-        return str(datetime.today().strftime('%Y-%m-%d-%H-%M-%S'))
+        return str(datetime.today().strftime("%Y-%m-%d-%H-%M-%S"))
 
     # function to read raw time
     def get_raw_time(self):
-        return str(datetime.today().strftime('%Y%d%H%M%S'))
+        return str(datetime.today().strftime("%Y%d%H%M%S"))
 
     def read_time(self):
-        return str(datetime.today().strftime('%H-%M-%S'))
+        return str(datetime.today().strftime("%H-%M-%S"))

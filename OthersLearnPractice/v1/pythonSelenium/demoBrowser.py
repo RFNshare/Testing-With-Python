@@ -76,5 +76,5 @@ def run(browser, auto):
         print("Cleaning Done")
 
 
-if __name__ == '__main__':
-    run('c', 'n')
+if __name__ == "__main__":
+    run("c", "n")

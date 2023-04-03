@@ -17,7 +17,7 @@ class Calculator:
 
 # Class Variable are constant
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     obj = Calculator(2, 3)
     result = obj.addition()
     print(result)

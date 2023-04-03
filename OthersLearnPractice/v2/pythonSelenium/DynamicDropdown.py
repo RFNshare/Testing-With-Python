@@ -20,6 +20,8 @@ for country in countries:
         country.click()
         break
 time.sleep(2)
-picked_name = driver.find_element(By.CSS_SELECTOR, "#autosuggest").get_attribute("value")
+picked_name = driver.find_element(By.CSS_SELECTOR, "#autosuggest").get_attribute(
+    "value"
+)
 print(picked_name)
 assert "India" in picked_name

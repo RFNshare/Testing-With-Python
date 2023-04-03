@@ -9,40 +9,40 @@ from datetime import datetime
 
 from dotenv import dotenv_values
 
-envs = dotenv_values('.env')
+envs = dotenv_values(".env")
 
 
 def send_report(receiver_email, reports, project_name):
-    sender = 'test@gmail.com'
+    sender = "test@gmail.com"
     receiver = receiver_email
 
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # Email Subject
-    mail_title = f'Test Report of {project_name} ' + str(current_time)
+    mail_title = f"Test Report of {project_name} " + str(current_time)
 
     print("*" * 80)
     mail_body = "Here is the report for the test run at " + str(current_time) + "\n\n"
 
     # Mail content, format, encoding
     message = MIMEMultipart("alternative")
-    message['From'] = sender
-    message['To'] = receiver
-    message['Subject'] = Header(mail_title, 'utf-8')
+    message["From"] = sender
+    message["To"] = receiver
+    message["Subject"] = Header(mail_title, "utf-8")
 
     message.attach(MIMEText(mail_body))
 
     for report in reports:  # add files to the message
         filename = os.path.basename(report)
         attachment = MIMEApplication(open(report, "rb").read(), _subtype="txt")
-        attachment.add_header('Content-Disposition', 'attachment', filename=filename)
+        attachment.add_header("Content-Disposition", "attachment", filename=filename)
         message.attach(attachment)
 
     print("Sending report...")
     print("*" * 80)
 
     try:
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
         server.starttls()
         server.login(envs["email_address"], envs["email_password"])
@@ -52,4 +52,3 @@ def send_report(receiver_email, reports, project_name):
 
     except Exception as e:
         print("Failed to send mail!!!, Error:", e)
-

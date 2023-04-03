@@ -52,6 +52,7 @@ def driver(cross_browser):
     _driver.quit()
     # print("Teardown Browser Original...")
 
+
 # @pytest.fixture
 # def login(driver, base_url, user):
 #     driver.get(urljoin(base_url, "/login"))

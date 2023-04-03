@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 # Setup Initial Values
 URL = "https://rahulshettyacademy.com/angularpractice/shop"
-product_list = ['iphone X', 'Blackberry']
+product_list = ["iphone X", "Blackberry"]
 country = "Bangladesh"
 message = "Success"
 
@@ -32,7 +32,7 @@ def wait_for_clickable_an_element(element):
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("headless")
-options.add_argument('window-size=1920,1080')
+options.add_argument("window-size=1920,1080")
 
 # Initialize Browser
 service = Service(ChromeDriverManager().install())
@@ -44,13 +44,17 @@ driver.implicitly_wait(5)
 all_products = driver.find_elements(By.XPATH, "//h4/a")
 for product in all_products:
     if product.text in product_list:
-        product.find_element(By.XPATH, "ancestor::div[@class='card h-100']//button").click()  # Chaining Web Elements=
+        product.find_element(
+            By.XPATH, "ancestor::div[@class='card h-100']//button"
+        ).click()  # Chaining Web Elements=
 
 # Go To Checkout Page
 driver.execute_script("window.scrollTo(0, 0);")
 driver.get_screenshot_as_file("a.png")
 driver.find_element(By.PARTIAL_LINK_TEXT, "Checkout").click()
-wait_for_an_element((By.CSS_SELECTOR, ".btn-success"))  # Waiting for Checkout Button In Next Page
+wait_for_an_element(
+    (By.CSS_SELECTOR, ".btn-success")
+)  # Waiting for Checkout Button In Next Page
 
 # Go To Purchase Page & Purchase
 driver.find_element(By.CSS_SELECTOR, ".btn-success").click()

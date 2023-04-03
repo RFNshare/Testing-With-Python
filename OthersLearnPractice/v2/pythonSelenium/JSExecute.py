@@ -22,8 +22,7 @@ options.add_argument("--disable-application-cache")
 options.add_argument("--no-sandbox")
 options.add_argument("--allow-insecure-localhost")
 options.add_argument("--window-size=1280,800")
-options.experimental_options["prefs"] = {
-    "logging.browser.enable": "false"}
+options.experimental_options["prefs"] = {"logging.browser.enable": "false"}
 
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)

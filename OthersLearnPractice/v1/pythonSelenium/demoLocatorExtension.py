@@ -14,7 +14,9 @@ driver.maximize_window()
 # Find by Link-text
 # driver.find_element(By.LINK_TEXT, "Forgot password?").click()
 driver.find_element(By.PARTIAL_LINK_TEXT, "Forgot password").click()
-driver.find_element(By.XPATH, "//form//input[@type='email']").send_keys("demo@gmail.com")
+driver.find_element(By.XPATH, "//form//input[@type='email']").send_keys(
+    "demo@gmail.com"
+)
 driver.find_element(By.CSS_SELECTOR, "form div:nth-child(2) input").send_keys("123456")
 driver.find_element(By.CSS_SELECTOR, "#confirmPassword").send_keys("123456")
 # Partial Match by Text

@@ -16,7 +16,7 @@ print("Finished at 26/03/2022")
 
 # Read current date
 def read_date():
-    return str(datetime.today().strftime('%Y-%m-%d'))
+    return str(datetime.today().strftime("%Y-%m-%d"))
 
 
 # Delete folder and its content except last n number of dirs
@@ -45,25 +45,36 @@ def read_date():
 
 
 # Send mail
-def sendmail(sender_email, sender_password, receivers_email, mail_subject, mail_body, attached_file_path, bcc_mail=''):
+def sendmail(
+    sender_email,
+    sender_password,
+    receivers_email,
+    mail_subject,
+    mail_body,
+    attached_file_path,
+    bcc_mail="",
+):
     # Mail content, format, encoding
     message = MIMEMultipart()
-    message['From'] = sender_email
-    message['To'] = receivers_email
-    message['Subject'] = Header(mail_subject, 'utf-8')
+    message["From"] = sender_email
+    message["To"] = receivers_email
+    message["Subject"] = Header(mail_subject, "utf-8")
     if bcc_mail:
-        message['Bcc'] = bcc_mail
+        message["Bcc"] = bcc_mail
     message.attach(MIMEText(mail_body))
 
     # Build the attachment
-    attachment = MIMEBase('application', 'octet-stream')
-    attachment.set_payload(open(attached_file_path, 'rb').read())
+    attachment = MIMEBase("application", "octet-stream")
+    attachment.set_payload(open(attached_file_path, "rb").read())
     encoders.encode_base64(attachment)
-    attachment.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(attached_file_path))
+    attachment.add_header(
+        "Content-Disposition",
+        'attachment; filename="%s"' % os.path.basename(attached_file_path),
+    )
     message.attach(attachment)
 
     try:
-        server = smtplib.SMTP('smtp.gmail.com', 465)
+        server = smtplib.SMTP("smtp.gmail.com", 465)
         server.ehlo()
         server.starttls()
         server.login(sender_email, sender_password)
@@ -76,9 +87,18 @@ def sendmail(sender_email, sender_password, receivers_email, mail_subject, mail_
 
 # Send email
 def send_email(sender, password, receivers):
-    bcc_mail = ''
-    email_subject = 'Test Report'
+    bcc_mail = ""
+    email_subject = "Test Report"
     email_body = "Dear Sir, Please check this report."
-    attached_file_path = Path(__file__).parent.parent.parent / f"output/reports/report.html"
-    sendmail(sender, password, receivers, email_subject, email_body, attached_file_path, bcc_mail)
-
+    attached_file_path = (
+        Path(__file__).parent.parent.parent / f"output/reports/report.html"
+    )
+    sendmail(
+        sender,
+        password,
+        receivers,
+        email_subject,
+        email_body,
+        attached_file_path,
+        bcc_mail,
+    )

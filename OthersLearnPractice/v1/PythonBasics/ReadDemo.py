@@ -1,4 +1,4 @@
-file = open('../resources/sample.txt')
+file = open("../resources/sample.txt")
 
 # Read Number of characters by passing parameter
 # print(file.read(25))

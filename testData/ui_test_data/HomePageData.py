@@ -13,22 +13,28 @@ class HomePageData:
     password = "123456"
     txt = "Hello Again"
     success_message = "Success"
-    test_homepage_data = [{"first_name": "Abdullah Al", "email": "aalfaroque@gmail.com", "password": "12345"},
-                          {"first_name": "Faroque", "email": "rfnshare@gmail.com", "password": "4321"}]
-    EXCEL_PATH = Path(__file__).parent.parent / 'test_data.xlsx'
+    test_homepage_data = [
+        {
+            "first_name": "Abdullah Al",
+            "email": "aalfaroque@gmail.com",
+            "password": "12345",
+        },
+        {"first_name": "Faroque", "email": "rfnshare@gmail.com", "password": "4321"},
+    ]
+    EXCEL_PATH = Path(__file__).parent.parent / "test_data.xlsx"
     configuration_data = read_configuration_data_from_excel(EXCEL_PATH)
     url = configuration_data["frontend_url"]
     h_mode = configuration_data["headless"]
     browser = configuration_data["browser"].casefold()
     b = []
-    if browser == 'all':
+    if browser == "all":
         b = ["chrome", "firefox", "edge"]
     else:
         b.append(configuration_data["browser"].casefold())
 
     @staticmethod
     def get_test_data(TestCase):
-        EXCEL_PATH = Path(__file__).parent / 'PythonDemo.xlsx'
+        EXCEL_PATH = Path(__file__).parent / "PythonDemo.xlsx"
         book = openpyxl.load_workbook(EXCEL_PATH)
         sheet = book.active
         dic = {}

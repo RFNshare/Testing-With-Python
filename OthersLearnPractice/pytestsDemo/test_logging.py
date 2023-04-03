@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def test_logging():
-    LOGGING_CONFIG = Path(__file__).parent / 'logging.conf'
+    LOGGING_CONFIG = Path(__file__).parent / "logging.conf"
     logging.config.fileConfig(LOGGING_CONFIG)
     logger = logging.getLogger(__name__)
     logger.debug("Printing a debug statement")
@@ -11,6 +11,7 @@ def test_logging():
     logger.warning("Printing a war")
     logger.error("This is an critical error")
     logger.critical("Critical Issues")
+
 
 # Another Way One
 # def test_logging():
