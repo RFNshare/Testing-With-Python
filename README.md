@@ -50,11 +50,18 @@ Behold my periodic learnings, and judge me for my ignorance.
     * run ``py.test -v -s`` to run all test cases in a directory. v=verbose, s=console log.
     * run ``py.test -v -s test_file_name.py`` to run specific file.
     * run ``py.test -v -s -k method_partial_name`` to run module based on module name regex match.
-    * run ``py.test -v -s -m smoke`` to run module based on pytest mark(tag) in pytest.ini file.
+    * for exclude tc partially run, ``py.test -v -s -k "not method_partial_name"``
+    * run ``py.test -v -s -m smoke/xfail/regression`` to run module based on pytest mark(tag) in pytest.ini file.
     * combine run `py.test -v -s -k card -m smoke` based on module partial name with mark(tag).
     * silent run `pytest -q`
+    * class/method wise run `pytest test_sample.py::Classname/TestMethod`
+    * details runtime `pytest --durations=0 -vv`
     * use `@pytest.mark.skip` to skip a test case module.
     * use `@pytest.mark.xfail` to skip report but method will be executed.
+    * use `@pytest.mark.parameterize` to run same test case with different values/params.
+    * use `@pytest.mark.django_db` to run django test case. it'll create clone db & run tcs. Use SQL DUMP to avoid waiting.
+    * using `caplog` argument to validate log text. For info log validate we can use caplog.at_level(logging.INFO)
+    * we can validate `ValueError` text using `with pytest.raises(ValueError) as e`
   * Pytest Fixtures 
     * use `@pytest.fixture()` mark to set up pre-requisite method `setup` to run before execute the test cases.
     * use `yield` in setup method to teardown/cleanup after execute all test cases.
